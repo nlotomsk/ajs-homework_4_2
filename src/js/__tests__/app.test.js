@@ -1,36 +1,15 @@
-import healthIndicator from '../app';
 
-test('above 50', () => {
-  const checker = healthIndicator({ name: 'Маг', health: 90 });
-  const expected = 'healthy';
-
-  expect(checker).toBe(expected);
-});
-
-test('on 50', () => {
-  const checker = healthIndicator({ name: 'Маг', health: 50 });
-  const expected = 'wounded';
-
-  expect(checker).toBe(expected);
-});
-
-// test('on 25', () => {
-//   const checker = healthIndicator({ name: 'Маг', health: 25 });
-//   const expected = 'wounded';
-
-//   expect(checker).toBe(expected);
-// });
-
-test('on 15', () => {
-  const checker = healthIndicator({ name: 'Маг', health: 15 });
-  const expected = 'wounded';
-
-  expect(checker).toBe(expected);
-});
-
-test('on 1', () => {
-  const checker = healthIndicator({ name: 'Маг', health: 2 });
-  const expected = 'critical';
-
-  expect(checker).toBe(expected);
+test('Проверка вывода персоонажей по количеству здоровья', () => {
+  const Arr = [
+    { name: 'мечник', health: 10 },
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+  ];
+  const expected = [
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+    { name: 'мечник', health: 10 },
+  ];
+  const recevied = construction(Arr);
+  expect(recevied).toEqual(expected);
 });
