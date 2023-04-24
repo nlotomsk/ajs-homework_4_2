@@ -1,3 +1,4 @@
+import construction from '../app';
 
 test('Проверка вывода персоонажей по количеству здоровья', () => {
   const Arr = [
